@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Hugo Ethereal"
+license = "MIT"
+licenselink = "https://github.com/stueja/hugo-theme-html5up-ethereal/blob/master/LICENSE.md"
+description = "AJ's/html5up wonderful Ethereal theme, and my take on putting it into hugo."
+homepage = "https://github.com/stueja/hugo-theme-html5up-ethereal"
+tags = ["responsive", "font awesome", "personal", "portfolio", "creative", "landing page"]
+features = ["responsive", "font awesome", "personal", "portfolio", "creative", "landing page"]
+min_version = "0.38"
+
+[author]
+  name = "Jan Stuehler"
+  homepage = "https://github.com/stueja"
+
+# If porting an existing theme
+[original]
+  name = "AJ@html5up"
+  homepage = "https://html5up.net/ethereal"
+  repo = ""

@@ -1,0 +1,35 @@
+            {{ "<!-- contact -->" | safeHTML }} 
+			{{- with .Site.Params.contact }}
+			<section class="{{ .sectionclassstring }}">
+					<div class="{{ .textdivclassstring }}">
+						<h2 class="major">{{ .headline }}</h2>
+						<p>{{ .paragraph }}</p>
+					</div>
+					<div class="{{ .formdivclassstring }}">
+						<div class="{{ .innerdivclassstring }}">
+							<form method="{{ .formmethod }}" action="{{ .formaction }}">
+								{{- range .formfield }}
+									<div class="{{ .classstring }}">
+										<label for="{{ .id }}">{{ .label }}</label>
+										<input type="{{ .inputtype }}" name="{{ .id }}" id="{{ .id }}" />
+									</div>
+								{{- end }}
+								<div class="{{ .messagebox.classstring }}">
+									<label for="{{ .messagebox.id }}">Message</label>
+									<textarea name="{{ .messagebox.id }}" id="{{ .messagebox.id }}" rows="4"></textarea>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="{{ .submitbutton.value }}" class="{{ .submitbutton.classstring }}" /></li>
+								</ul>
+							</form>
+						</div>
+						<div class="{{ .socialclassstring }}">
+							<ul class="contact-icons color1">
+							{{- range .social }}
+								<li class="icon {{ .ico }}"><a href="{{ .url }}">{{ .tag }}</a></li>
+							{{- end }}
+							</ul>
+						</div>
+					</div>
+				</section>
+				{{- end }}	{{/* with */}}

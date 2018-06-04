@@ -1,0 +1,11 @@
+            {{ "<!--" | safeHTML }} panel {{ .order }} {{ "-->" | safeHTML }}
+            <section class="{{ .classstring }}"{{- if ( .anchorid ) and ( .anchorid "!=" "" ) }} id="{{ .anchorid }}"{{- end }}>
+                {{- range $i, $e := sort .inner "order" }}
+				<div class="{{ .classstring }}" {{- if ( .dataposition ) and ( .dataposition "!=" "" ) }} data-position="{{ .dataposition }}" {{- end }}>
+					{{- if ( .headline ) and ( .headline "!=" "" ) }}{{ printf "%v%v%v%v%v" "<" .headlinesize " class=\"" .headlineclass "\">" | safeHTML }}{{ .headline | safeHTML }}{{ printf "%v%v%v" "</" .headlinesize ">" | safeHTML }}{{- end}}
+					{{- if ( .paragraph ) and ( .paragraph "!=" "" ) }}<p>{{ .paragraph | safeHTML }}</p>{{- end}}
+					{{- if ( .imagepath ) and ( .imagepath "!=" "" ) }}<img src="{{ .imagepath }}" alt="{{ .imagealt }}" />{{- end }}
+					{{- if ( .addhtml ) and ( .addhtml "!=" "" ) }}{{ .addhtml | safeHTML }}{{- end}}
+                </div>
+                {{- end }}  {{/* range .inner */}}
+            </section>

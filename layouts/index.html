@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='{{ .Site.LanguageCode }}'>
+  <head>
+    <title>{{ .Site.Title }}</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="css/main.css" />
+	<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+  </head>
+  <body>
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			{{ with .Site.Params.panel.before }}
+				{{- range $index, $element := sort . "order" }}
+					{{ partial "panel.html" . }}
+				{{- end }}     {{/* range $index */}}
+			{{- end }}     {{/* with */}}
+
+			{{ partial "contact.html" . }}
+
+			{{ with .Site.Params.panel.after }}
+				{{- range $index, $element := sort . "order" }}
+					{{ partial "panel.html" . }}
+				{{- end }}     {{/* range $index */}}
+			{{- end }}     {{/* with */}}
+			
+			<!-- Copyright -->
+			<div class="copyright">
+				&copy; {{ .Site.Params.copyright }}  Design: <a href="https://html5up.net">HTML5 UP</a>.
+			</div>
+
+		</div> <!-- wrapper -->
+	</div> <!-- page-wrapper -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/main.js"></script>
+  </body>
+</html>
+
